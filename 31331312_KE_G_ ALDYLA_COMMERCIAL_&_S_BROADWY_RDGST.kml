@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>31331312_KE_G_ ALDYLA_COMMERCIAL_&amp;_S_BROADWY_RDGST.kmz</name>
+	<open>1</open>
+	<StyleMap id="msn_wht-stars">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_wht-stars</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_wht-stars</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00aaff</color>
+			<width>4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>9900aaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00aaff</color>
+			<width>4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>9900aaff</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_red-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_red-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_red-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ff00</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin3</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin2">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin2">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ff00</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_red-pushpin">
+		<IconStyle>
+			<color>ff0000aa</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin3">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>9900ffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>9900ffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin3">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff00aa</color>
+			<width>4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>99ff00aa</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_wht-stars">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-stars.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-stars-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_red-pushpin">
+		<IconStyle>
+			<color>ff0000aa</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff00aa</color>
+			<width>4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>99ff00aa</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_wht-stars">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-stars.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/wht-stars-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Folder>
+		<name>31331312_KE_G_ALDYLA COMMERCIAL &amp; S BROADWY RDGST</name>
+		<open>1</open>
+		<Placemark>
+			<name>Approximate Project Center</name>
+			<description>Red line = Install replacement gas main via HDD 
+Green line = Deactivate existing gas main
+Orange Polygon = Replace Gas Service Lines via HDD
+Purple Polygon = Install ETS</description>
+			<LookAt>
+				<longitude>-117.6540613442272</longitude>
+				<latitude>35.62176018812253</latitude>
+				<altitude>0</altitude>
+				<heading>3.117744778146159e-005</heading>
+				<tilt>35.58376767407619</tilt>
+				<range>105.6323002861129</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_wht-stars</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-117.6540113082325,35.62155087741554,0</coordinates>
+			</Point>
+		</Placemark>
+		<Folder>
+			<name>Replace Gas Main</name>
+			<open>1</open>
+			<Placemark>
+				<name>Install 264&apos; of 2&quot; HP PL Gas Main via HDD</name>
+				<styleUrl>#msn_ylw-pushpin1</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-117.6545027416969,35.62156291811829,0 -117.6536139666094,35.62156400934421,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Deactivate 248&apos; of 2&quot; HP PL Gas Main</name>
+				<styleUrl>#msn_ylw-pushpin0</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>
+						-117.6544487809521,35.6215849569212,0 -117.6536134826895,35.62158556214805,0 
+					</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Bell holes to cut-off/tie-in gas main</name>
+			<Placemark>
+				<name>5x5x4</name>
+				<LookAt>
+					<longitude>-117.6535041468109</longitude>
+					<latitude>35.62154979858436</latitude>
+					<altitude>0</altitude>
+					<heading>0.0002731899496089771</heading>
+					<tilt>0</tilt>
+					<range>81.62665847381783</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_red-pushpin</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-117.6535804212675,35.62156246890518,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>5x5x4</name>
+				<LookAt>
+					<longitude>-117.6541040807009</longitude>
+					<latitude>35.62155906548277</latitude>
+					<altitude>0</altitude>
+					<heading>-7.622821221382257e-005</heading>
+					<tilt>0</tilt>
+					<range>81.26529015628309</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_red-pushpin</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-117.654466474894,35.62156310366844,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>5x5x4</name>
+				<LookAt>
+					<longitude>-117.6535041468002</longitude>
+					<latitude>35.62154979857385</latitude>
+					<altitude>0</altitude>
+					<heading>0.0002731899558333226</heading>
+					<tilt>0</tilt>
+					<range>81.62665847307552</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_red-pushpin</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-117.6536134879557,35.62158346620614,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>5x5x4</name>
+				<LookAt>
+					<longitude>-117.6541040807009</longitude>
+					<latitude>35.62155906548277</latitude>
+					<altitude>0</altitude>
+					<heading>-7.622821221382257e-005</heading>
+					<tilt>0</tilt>
+					<range>81.26529015628309</range>
+					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				</LookAt>
+				<styleUrl>#msn_red-pushpin</styleUrl>
+				<Point>
+					<gx:drawOrder>1</gx:drawOrder>
+					<coordinates>-117.6544497601636,35.62158136170439,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Replace or Transfer Gas Service Lines</name>
+			<open>1</open>
+			<Placemark>
+				<name>Replace Gas Service Lines via HDD</name>
+				<description>Replace 6 Gas Service Lines</description>
+				<styleUrl>#msn_ylw-pushpin3</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-117.654483476704,35.62156268240861,0 -117.6544762929249,35.62139988231227,0 -117.654477619772,35.62120792663231,0 -117.6543754482629,35.62120728610377,0 -117.6543491022026,35.62120315677881,0 -117.6541971395012,35.62119921153138,0 -117.6541964207083,35.62134415098524,0 -117.65419624405,35.6215834478812,0 -117.6540595092632,35.62158463135904,0 -117.6540603760147,35.62158533515009,0 -117.653759394402,35.62158492563818,0 -117.6536699171655,35.62158837849197,0 -117.6536690307351,35.62158696205066,0 -117.653670770796,35.62158484005229,0 -117.653670618435,35.62158958742406,0 -117.6536656498562,35.62159756253848,0 -117.6536661274647,35.62167666479947,0 -117.6536647085513,35.62189292649426,0 -117.6539279569418,35.62189207202424,0 -117.6540285670149,35.62184214418471,0 -117.6541304719524,35.62184142667667,0 -117.6542251255053,35.62184409961321,0 -117.6543445805777,35.62184324670059,0 -117.6543452874896,35.6216144014991,0 -117.6543449699486,35.6215650260509,0 -117.654483476704,35.62156268240861,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Transfer Gas Service Line via Open Cut Trenching</name>
+				<description>Transfer 1 Gas Service Line</description>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-117.6541971354279,35.62158274599763,0 -117.6541957996524,35.62156161906471,0 -117.6540624233333,35.62156142650102,0 -117.6540630283097,35.62158323217589,0 -117.6541971354279,35.62158274599763,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<name>Transfer Gas Service Line via Open Cut Trenching</name>
+				<description>Transfer 1 Gas Service Line</description>
+				<styleUrl>#msn_ylw-pushpin</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-117.6537839979791,35.6215848719544,0 -117.6537830563224,35.62156580923008,0 -117.6536583570501,35.62156570016879,0 -117.6536584921876,35.62158482818237,0 -117.6537839979791,35.6215848719544,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>Install ETS</name>
+			<open>1</open>
+			<Placemark>
+				<name>Install ETS 1&apos; Behind Pavement</name>
+				<styleUrl>#msn_ylw-pushpin2</styleUrl>
+				<Polygon>
+					<tessellate>1</tessellate>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-117.6544848731275,35.62156394854086,0 -117.6544973622111,35.62158849697159,0 -117.6545140278567,35.62158849610284,0 -117.6545016012748,35.62156352375249,0 -117.6544848731275,35.62156394854086,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+	</Folder>
+</Document>
+</kml>
