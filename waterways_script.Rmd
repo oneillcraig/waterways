@@ -52,7 +52,7 @@ mapview(mapfile)
 ```{r}
 #water <- choose.files()
 
-riparian <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Riparian.shp")
+riparian <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_South.shp")
 
 mapview(riparian)+
   mapview(mapfile)
