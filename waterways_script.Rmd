@@ -1,0 +1,102 @@
+---
+title: "Waterways Buffer"
+author: "Craig O'Neill"
+date: "May 17, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Libraries Needed
+
+```{r}
+library(tidyverse)
+library(sf)
+library(leaflet)
+library(sp)
+library(rgdal)
+library(mapview)
+```
+
+##Load in KMZ
+
+```{r}
+location <- choose.files() #KML Only now
+
+
+#Retrieve Layer Data
+
+layers <- st_layers(location)
+lname <- layers$name
+lnum <- NROW(lname)
+
+#For Loop and load each layer of data
+allLayers <- function(location){
+  lyr <- st_layers(location)
+  mykml <- list()
+  for (i in 1:length(lyr$name)){
+    mykml[i] <- st_read(location, lyr[i])
+  }
+  names(mykml) <- lyr
+  return(mykml)
+}
+
+kmlfile <- "se\\file.KML"
+mykml <- allLayers(kmlfile)
+
+mykml2 <- st_read(location, layer = lname[1])
+
+mykml <- st_read(location, layer = lname[i])
+
+mykml <- df[NROW(lname), 3]
+mykml<-mykml[FALSE,]
+for (i in 1:4){
+  #mykml[i] <- st_read(location, layer=lname[i])
+  rbind(mykml[i], mykml[i+1])
+}
+
+map <- st_read(location, layer= layers$name[1])
+
+
+map3 <- sf::st_read(location, layer= 'Bell holes to intercept existing conduit to extend/reroute')
+map3 <- sf::st_read(location, layer= layers$name[1])
+
+st_layers(location)
+
+plot(map$geometry)
+
+leaflet() %>% 
+  addTiles(map$geometry)
+
+mapview(map)
+
+layers$name
+
+```
+
+```{r}
+#Load the KML
+location <- choose.files() #KML Only now
+
+#Process the Layer Names and Numbers
+layers <- st_layers(location)
+lname <- layers$name
+
+
+#Load all Layers in a ForLoop
+datalist = list()
+for(i in 1:NROW(lname)){
+  dat <- st_read(location, layer = lname[i])
+  dat$i <- i
+  datalist[[i]] <- dat
+}
+
+#Combine All Layers into 1 SF File
+mapfile <- do.call(rbind, datalist)
+
+#View Map
+mapview(mapfile)
+```
+
