@@ -55,16 +55,33 @@ mapview(mapfile)
 #CA Waterways Shapefiles
 CAR <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Riparian.shp") #CA_Riparian
 colnames(CAR) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CAR <- st_transform(CAR, "+init=epsg:4326")
+CAR <- st_intersection(MBICounties, CAR)
+
 CAWN <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_North.shp") #CA Wetlands North
 colnames(CAWN) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CAWN <- st_transform(CAWN, "+init=epsg:4326")
+CAWN <- st_intersection(MBICounties, CAWN)
+
 CAWNC <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_NorthCentral.shp") #CA Wetlands North Central
 colnames(CAWNC) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CAWNC <- st_transform(CAWNC, "+init=epsg:4326")
+CAWNC <- st_intersection(MBICounties, CAWNC)
+
 CAWS <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_South.shp") #CA Wetlands South
 colnames(CAWS) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CAWS <- st_transform(CAWS, "+init=epsg:4326")
+CAWS <- st_intersection(MBICounties, CAWS)
+
 CAWSC <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_SouthCentral.shp") #CA Wetlands South Central
 colnames(CAWSC) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CAWSC <- st_transform(CAWSC, "+init=epsg:4326")
+CAWSC <- st_intersection(MBICounties, CAWSC)
+
 CACA <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/California.shp") #California
 colnames(CACA) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CACA <- st_transform(CACA, "+init=epsg:4326")
+CACA <- st_intersection(MBICounties, CACA)
 
 CAWater <- rbind(CAR, CAWN, CAWNC, CAWS, CAWSC, CACA)
 CAWater <- st_transform(CAWater, "+init=epsg:4326")
@@ -92,7 +109,7 @@ mapview(MBICounties)+
   mapview(mapfile)
 
 
-mapview(CropWater)+
+mapview(CAWS)+
   mapview(MBICounties)
 
 ```
