@@ -52,10 +52,48 @@ mapview(mapfile)
 ```{r}
 #water <- choose.files()
 
-riparian <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_South.shp")
+#CA Waterways Shapefiles
+CAR <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Riparian.shp") #CA_Riparian
+colnames(CAR) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CAWN <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_North.shp") #CA Wetlands North
+colnames(CAWN) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CAWNC <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_NorthCentral.shp") #CA Wetlands North Central
+colnames(CAWNC) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CAWS <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_South.shp") #CA Wetlands South
+colnames(CAWS) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CAWSC <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_SouthCentral.shp") #CA Wetlands South Central
+colnames(CAWSC) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
+CACA <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/California.shp") #California
+colnames(CACA) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
 
-mapview(riparian)+
+CAWater <- rbind(CAR, CAWN, CAWNC, CAWS, CAWSC, CACA)
+CAWater <- st_transform(CAWater, "+init=epsg:4326")
+
+#Reproject
+CAR <- st_transform(CAR, "+init=epsg:4326")
+CAWN <- st_transform(CAWN, "+init=epsg:4326")
+CAWNC <- st_transform(CAWNC, "+init=epsg:4326")
+CAWS <- st
+
+
+riparian <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Wetlands_South.shp")
+riparian <- st_transform(riparian, "+init=epsg:4326")
+riparianN <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Riparian.shp")
+riparianN <- st_transform(riparianN, "+init=epsg:4326")
+CACounties <- st_read("CA_Counties/CA_Counties_TIGER2016.shp")
+CACounties <-st_transform(CACounties, "+init=epsg:4326")
+MBICounties <- subset(CACounties, NAME == "Kern" | NAME == "Fresno" | NAME == "Mariposa" | NAME == "Tulare" | NAME == "Kings" | NAME == "Madera" | NAME == "Merced")
+
+CropWater <- st_intersection(MBICounties, CAWater)
+
+
+
+mapview(MBICounties)+
   mapview(mapfile)
+
+
+mapview(CropWater)+
+  mapview(MBICounties)
 
 ```
 
