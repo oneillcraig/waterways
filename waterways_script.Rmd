@@ -98,7 +98,7 @@ CAWater <- rbind(CAR, CAWN, CAWNC, CAWS, CAWSC, CACA)
 CAWater <- st_transform(CAWater, "+init=epsg:4326")
 
 #Remove the SF data for the county.
-CropWater <- CropWater %>% 
+CAWater <- CAWater %>% 
   filter(Wetland_TY != "CA")
 
 #Buffer all site locations to 100ft
@@ -110,14 +110,17 @@ mapfile <- mapfile%>%
   filter(i != 16)
 
 #Find the areas where waterways intersect with the buffered project locations.
-CropWater <- st_intersection(mapfile, CropWater) %>% 
+CropWater <- st_intersection(mapfile, CAWater) %>% 
   select(-NAME) #remove redunant "NAME" dataset.  The all caps "NAME" is just the name of the county and is unneeded.  This is removed because when saving the KML it overwrites the location name with this NAME.
 
 #Write to file KML to file.
-st_write(CropWater, "test2.kml", driver='kml', update = TRUE)
+st_write(CropWater, "test3.kml", driver='kml', update = TRUE)
 
 #Write Database to file for report write up.
-write.csv(CropWater, "test2.csv")
+CropTable <- CropWater
+st_geometry(CropTable) <- NULL
+
+write.csv(CropTable[,1], "test4.csv")
 
 ```
 
