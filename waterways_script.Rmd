@@ -49,9 +49,10 @@ mapview(mapfile)
 
 ##Load in the Most Recent Waterways Shapefiles
 
-```{r}
-#water <- choose.files()
+##Select the Counties your project is located in
 
+
+```{r}
 #Add Counties Project is located in
 CACounties <- st_read("CA_Counties/CA_Counties_TIGER2016.shp")
 CACounties <-st_transform(CACounties, "+init=epsg:4326")
@@ -60,6 +61,10 @@ CACounties <-st_transform(CACounties, "+init=epsg:4326")
 MBICounties <- subset(CACounties, NAME == "Fresno")
 #MBICounties <- subset(CACounties, NAME == "Kern" | NAME == "Fresno" | NAME == "Mariposa" | NAME == "Tulare" | NAME == "Kings" | NAME == "Madera" | NAME == "Merced")
 
+```
+
+##Filter Waterways Data down to County Level
+```{r}
 #CA Waterways Shapefiles
 CAR <- st_read("CA_shapefile_wetlands/CA_shapefile_wetlands/CA_Riparian.shp") #CA_Riparian
 colnames(CAR) <- c("Attribute", "Wetland_TY", "Acres", "Shape_Leng", "Shape_Area", "geometry")
@@ -101,26 +106,64 @@ CAWater <- st_transform(CAWater, "+init=epsg:4326")
 CAWater <- CAWater %>% 
   filter(Wetland_TY != "CA")
 
+```
+
+##Calculate buffer around Worksite Locations
+
+```{r}
 #Buffer all site locations to 100ft
-mapfile <- mapfile %>% 
-  st_buffer(dist = 0.00068677) 
+mapfile2 <- mapfile %>% 
+  st_transform(3496) %>% #project to a format with units in feet
+  st_buffer(dist = 100) %>%  #buffer by 100 feet around all locations
+  st_transform(4326) #project back into the Google Earth WGS84 datum
 
 #Remove the waterways data from the original KML (if still present)  The i number = folder number for the waterways.
-mapfile <- mapfile%>% 
-  filter(i != 16)
+mapfile2 <- mapfile2%>% 
+  filter(i != 16) #16 just happens to be the layer number for the test file.  You'd need to look at the layers to figure out which is the waterways folder number.
 
-#Find the areas where waterways intersect with the buffered project locations.
-CropWater <- st_intersection(mapfile, CAWater) %>% 
-  select(-NAME) #remove redunant "NAME" dataset.  The all caps "NAME" is just the name of the county and is unneeded.  This is removed because when saving the KML it overwrites the location name with this NAME.
-
-#Write to file KML to file.
-st_write(CropWater, "test3.kml", driver='kml', update = TRUE)
-
-#Write Database to file for report write up.
-CropTable <- CropWater
-st_geometry(CropTable) <- NULL
-
-write.csv(CropTable[,1], "test4.csv")
 
 ```
+
+##Calculate the areas of overlap
+
+```{r}
+#Find the areas where waterways intersect with the buffered project locations.
+CropWater <- st_intersection(mapfile2, CAWater) %>% 
+  select(-NAME) #remove redunant "NAME" dataset.  The all caps "NAME" is just the name of the county and is unneeded.  This is removed because when saving the KML it overwrites the location name with this NAME.
+
+CropWater2 <- st_intersection(CAWater, mapfile2) %>% 
+  select(-NAME)
+
+mapview(CropWater2)+
+  mapview(mapfile)+
+  mapview(CropWater)
+```
+
+##Optional:  View Map of Project and Overlap Areas
+
+```{r}
+mapview(CropWater)+
+  mapview(mapfile)+
+  mapview(mapfile2)
+```
+
+
+##Save KML and Table of overlap areas
+
+```{r}
+
+#Write to file KML to file.
+st_write(CropWater2, "testcw2-2.kml", driver='kml', update = TRUE)
+
+#Write Database to file for report write up.
+CropTable <- CropWater2
+st_geometry(CropTable) <- NULL
+CropTable <- CropTable %>% 
+  select(Name)
+
+write.csv(CropTable[,1], "testcw2.csv")
+
+```
+
+
 
