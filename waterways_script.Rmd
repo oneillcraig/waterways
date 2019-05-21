@@ -58,7 +58,7 @@ CACounties <- st_read("CA_Counties/CA_Counties_TIGER2016.shp")
 CACounties <-st_transform(CACounties, "+init=epsg:4326")
 
 #Set county of work.  Due to size of waterways, its best to only pick the one county where the work is occuring.
-MBICounties <- subset(CACounties, NAME == "Fresno")
+MBICounties <- subset(CACounties, NAME == "Madera")
 #MBICounties <- subset(CACounties, NAME == "Kern" | NAME == "Fresno" | NAME == "Mariposa" | NAME == "Tulare" | NAME == "Kings" | NAME == "Madera" | NAME == "Merced")
 
 ```
@@ -119,7 +119,7 @@ mapfile2 <- mapfile %>%
 
 #Remove the waterways data from the original KML (if still present)  The i number = folder number for the waterways.
 mapfile2 <- mapfile2%>% 
-  filter(i != 16) #16 just happens to be the layer number for the test file.  You'd need to look at the layers to figure out which is the waterways folder number.
+  filter(i != 8) #16 just happens to be the layer number for the test file.  You'd need to look at the layers to figure out which is the waterways folder number.
 
 
 ```
@@ -153,7 +153,7 @@ mapview(CropWater)+
 ```{r}
 
 #Write to file KML to file.
-st_write(CropWater2, "testcw2-2.kml", driver='kml', update = TRUE)
+st_write(CropWater2, "current-2.kml", driver='kml', update = TRUE)
 
 #Write Database to file for report write up.
 CropTable <- CropWater2
@@ -161,7 +161,7 @@ st_geometry(CropTable) <- NULL
 CropTable <- CropTable %>% 
   select(Name)
 
-write.csv(CropTable[,1], "testcw2.csv")
+write.csv(CropTable[,1], "current-2.csv")
 
 ```
 
