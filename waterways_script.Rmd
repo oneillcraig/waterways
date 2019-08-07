@@ -57,9 +57,15 @@ mapview(mapfile)
 CACounties <- st_read("CA_Counties/CA_Counties_TIGER2016.shp")
 CACounties <-st_transform(CACounties, "+init=epsg:4326")
 
+#Add Municipalities/PLaces
+CAPlaces <- st_read("CA_Counties/CA_Places_TIGER2016.shp")
+CAPlaces <- st_transform(CAPlaces, "+init=epsg:4326")
+
 #Set county of work.  Due to size of waterways, its best to only pick the one county where the work is occuring.
 MBICounties <- subset(CACounties, NAME == "Madera")
+MBIPlaces <- st_intersection(CAPlaces, MBICounties)
 #MBICounties <- subset(CACounties, NAME == "Kern" | NAME == "Fresno" | NAME == "Mariposa" | NAME == "Tulare" | NAME == "Kings" | NAME == "Madera" | NAME == "Merced")
+
 
 ```
 
@@ -117,7 +123,10 @@ mapfile2 <- mapfile %>%
   st_buffer(dist = 100) %>%  #buffer by 100 feet around all locations
   st_transform(4326) #project back into the Google Earth WGS84 datum
 
-#Remove the waterways data from the original KML (if still present)  The i number = folder number for the waterways.
+
+readline(prompt= "Hey, does your KML have waterways in it?  If so, find out what the i value is and active the next line of code!")
+
+#Remove the waterways data from the original KML (if still present)  The i number = folder number for the waterways.  This would only exist if you are using a file that already has waterways written in.  Otherwise skip this step.
 mapfile2 <- mapfile2%>% 
   filter(i != 8) #16 just happens to be the layer number for the test file.  You'd need to look at the layers to figure out which is the waterways folder number.
 
@@ -130,13 +139,21 @@ mapfile2 <- mapfile2%>%
 #Find the areas where waterways intersect with the buffered project locations.
 CropWater <- st_intersection(mapfile2, CAWater) %>% 
   select(-NAME) #remove redunant "NAME" dataset.  The all caps "NAME" is just the name of the county and is unneeded.  This is removed because when saving the KML it overwrites the location name with this NAME.
+PlacesCA <- st_intersection(mapfile2, MBIPlaces) #Adds a layer to describe what City/CDP we are working in.
 
 CropWater2 <- st_intersection(CAWater, mapfile2) %>% 
-  select(-NAME)
+  select(-NAME) #I dont think this one matters, but whatever, it's here.
+
+FinalCA <- st_intersection(CropWater, PlacesCA)
 
 mapview(CropWater2)+
   mapview(mapfile)+
   mapview(CropWater)
+
+mapview(PlacesCA)+
+  mapview(mapfile2)
+
+mapview(FinalCA)
 ```
 
 ##Optional:  View Map of Project and Overlap Areas
@@ -152,16 +169,18 @@ mapview(CropWater)+
 
 ```{r}
 
+
 #Write to file KML to file.
-st_write(CropWater2, "current-2.kml", driver='kml', update = TRUE)
+st_write(CropWater2, "31146808.kml", driver='kml', update = TRUE)
+st_write(FinalCA, "35024755b.kml", drive='kml', update = TRUE)
 
 #Write Database to file for report write up.
-CropTable <- CropWater2
+CropTable <- FinalCA
 st_geometry(CropTable) <- NULL
 CropTable <- CropTable %>% 
-  select(Name)
+  select(Name, Description, Wetland_TY, NAMELSAD.2)
 
-write.csv(CropTable[,1], "current-2.csv")
+write.csv(CropTable, "35024755b.csv")
 
 ```
 
